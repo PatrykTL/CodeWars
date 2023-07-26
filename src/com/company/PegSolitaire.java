@@ -93,13 +93,13 @@ public class PegSolitaire {
     //}
 
     private boolean areThere2PegsUp(int[] position){
-        if(position[0] - 1 < 0){
+        if(position[1] - 1 < 0){
             return false;
         }
-        if(position[0] - 2 < 0){
+        if(position[1] - 2 < 0){
             return false;
         }
-        if(board2d[position[0]-1][position[1]] == '0' &&)
+        if(board2d[position[0]][position[1]-1] == '0' && board2d[position[0]]position[1]-2)
     }
 
     private boolean areThere2PegsDown(){
