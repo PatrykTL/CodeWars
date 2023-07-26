@@ -99,15 +99,28 @@ public class PegSolitaire {
         if(position[1] - 2 < 0){
             return false;
         }
-        if(board2d[position[0]][position[1]-1] == '0' && board2d[position[0]]position[1]-2)
+        if(board2d[position[0]][position[1]-1] == 'O' && board2d[position[0]]position[1]-2 == 'O')
+return true;
+return false;
     }
 
-    private boolean areThere2PegsDown(){
-
+    private boolean areThere2PegsDown(int[] position){
+    if(position[1] + 1 > board2d[0].length()){
+return false;
+}
+    if(position[1] + 2 > board2d[0].length()){
+return false;
+}
+    if(board2d[position[0]][position[1]+1] == 'O' && board2d[position[0]][position[1]+2] == 'O')
+return true;
+return false;
     }
 
-    private boolean areThere2PegsLeft(){
-
+    private boolean areThere2PegsLeft(int[] position){
+if(position[0]-1 < 0){
+return false;
+}
+if(position[0]-2 < 0)
     }
 
     private boolean areThere2PegsRight(){
