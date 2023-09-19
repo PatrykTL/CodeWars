@@ -1,4 +1,4 @@
-package com.company;
+package fewFirstTasks;
 
 //import java.util.ArrayList;
 //import java.util.LinkedList;

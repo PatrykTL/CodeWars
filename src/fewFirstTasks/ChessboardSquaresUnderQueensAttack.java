@@ -1,4 +1,4 @@
-package com.company;
+package fewFirstTasks;
 
 public class ChessboardSquaresUnderQueensAttack {
 
