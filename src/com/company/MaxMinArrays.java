@@ -1,48 +1,46 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class MaxMinArrays {
 
-
     public static int[] solve (int[] arr){
-        int[] tmp = new int[arr.length];
-        for(int i = 0; i < arr.length - 1; i++){
-            int idMax = getIdOfMax(arr);
-            int idMin = getIdOfMin(arr);
-            tmp[i] = arr[idMax];
-            tmp[i+1] = arr[idMin];
+        for(int i = 0; i < arr.length - 1; i=i+2){
+            System.out.println();
+            int idMax = getIdOfMax(arr, i);
+            switchPlacesInTable(arr, i, idMax);
+            int idMin = getIdOfMin(arr, i+1);
+            switchPlacesInTable(arr, i+1, idMin);
         }
-        return tmp;
+        return arr;
     }
 
-
-
-
-    private static int getIdOfMax(int[] arr){
-        int max = arr[0];
-        for(int i = 1; i < arr.length; i++) {
-            for (int j = i; j < arr.length; j++) {
+    private static int getIdOfMax(int[] arr, int startingPoint){
+        int max = arr[startingPoint];
+        int idMax = startingPoint;
+            for (int j = startingPoint+1; j < arr.length; j++) {
                 if (max <= arr[j]) {
                     max = arr[j];
+                    idMax = j;
                 }
             }
-        }
-        return max;
+        return idMax;
     }
-    private static int getIdOfMin(int[] arr){
 
-        int min = arr[0];
-        for(int i = 1; i < arr.length; i++) {
-            for (int j = i; j < arr.length; j++) {
+    private static int getIdOfMin(int[] arr, int startingPoint){
+
+        int min = arr[startingPoint];
+        int idMin = startingPoint;
+            for (int j = startingPoint+1; j < arr.length; j++) {
                 if (min > arr[j]) {
                     min = arr[j];
+                    idMin = j;
                 }
             }
-        }
-        return min;
+        return idMin;
     }
-    private static void switchPlacesInTable(int[] arr, int firstPosition, int secondPosition){
 
+    private static void switchPlacesInTable(int[] arr, int firstPosition, int secondPosition){
+        int tmp = arr[firstPosition];
+        arr[firstPosition] = arr[secondPosition];
+        arr[secondPosition] = tmp;
     }
 }

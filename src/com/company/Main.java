@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    static int i;
 
     public static void main(String[] args) {
-
+        MaxMinArrays.solve(new int[]{15,7,12,10,11});
     }
 }
